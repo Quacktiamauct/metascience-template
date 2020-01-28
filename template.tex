@@ -1,0 +1,116 @@
+% ##################################
+% Videnskabsteori og Etik Skabelon
+% Copyright Mikkel W. Madsen 2020
+% [Drink responsibly]
+% ##################################
+
+\documentclass[a4paper, 12pt]{article}
+
+
+% ==== The Essentials ====
+\usepackage[utf8]{inputenc}
+\usepackage[final]{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage[margin=1.3in]{geometry}
+
+
+% ==== Language ====
+% The last language is the one used as the main one.
+\usepackage[danish,english]{babel} % choose this
+% \usepackage[english,danish]{babel} % or this
+
+
+% ==== Fonts ====
+\usepackage[osf]{garamondx} % the best, but probably unavaiable
+% \usepackage{ebgaramond} % also garamond
+% \usepackage{palatino} % one of the suggested fonts
+% \usepackage{times} % the other suggested font
+% Or use none of them to get Computer Modern.
+
+% ==== Conforming to the tyranny ====
+\usepackage{setspace}
+% \onehalfspacing % Choose this
+\setstretch{1.2} % but really choose this
+
+
+% ==== Quotations ====
+\usepackage{csquotes}
+% -- Reference --
+% | use \enquote{text} to quote something
+% | use \foreignquote{lang}{text} to quote in a different language.
+% | or  \hyphenquote{lang}{text} to keep quotation style.
+% | use \textquote[cite][]{text} to quote and cite
+% | Remember to set language in babel too!
+
+% | Either use the above mentioned package or just ``quote'' whenever.
+
+% ==== References Setup ====
+\usepackage[
+    backend=biber,
+    style=chicago-authordate
+]{biblatex}
+\bibliography{references}
+\addbibresource{references.bib}
+
+
+% ==== Lettrines! ====
+\usepackage{lettrine}
+\usepackage{GoudyIn}
+\setcounter{DefaultLines}{5}
+\renewcommand{\LettrineFontHook}{\GoudyInfamily{}}
+
+
+
+% ==== If you hate paragraph indention ====
+% \usepackage{parskip}
+
+
+% ==== Misc. ====
+\usepackage{blindtext}
+\usepackage{censor}
+
+\title{
+    % Title
+    Something About Technology Being Bad
+    \\\large % Subtitle
+    --- Or: How I Learned to Stop Worrying and Love 1984
+}
+% use backslash to remove the ekstra spacing from the dot
+\author{Dr.\ Prof.\ Tempy ``the Temporary'' McTempson}
+\date{\today}
+
+\begin{document}
+\maketitle
+% Your text here
+
+\Blindtext % this is sample text.
+
+\section{Using Quotes}
+Here is a \enquote{quote}.
+I here present a block quote as an example:
+\blockquote[Mikkel, on block quotes]{
+    So this is a big block quote.
+    Now I will just write something to make the block a bit bigger.
+    Formal requirements in academic writing frequently demand that quotations
+    be embedded in the text if they are short but set off as a distinct and
+    typically indented paragraph.
+}
+As it is said
+\textquote[E. Hemingway]{Write drunk. Edit sober.},
+I suggest and intend to due the same.
+Lastly a foreign quote, \foreignquote{danish}{Dette er et citat.}.
+Another great use of citations is to cite them!
+\textquote[\cite{goossens93}]{Something, something \LaTeX}
+And \LaTeX is good, see \cite{greenwade93}.
+
+
+\section{Using Lettrines}
+\lettrine{T}{his is a lettrine.} \blindtext
+
+\section{Secret Stuff}
+Here is a secret, okay ready? It's \censor{super secret}.
+
+% ==== References ====
+\printbibliography
+
+\end{document}
